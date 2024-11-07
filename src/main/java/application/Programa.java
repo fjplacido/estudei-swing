@@ -1,19 +1,21 @@
 package application;
 
-import java.util.Arrays;
+import javax.swing.SwingUtilities;
 
-import entities.Assunto;
-import entities.Disciplina;
+import gui.DisciplinaFrame;
 
 public class Programa {
 
 	public static void main(String[] args) {
 
-		Assunto assunto1 = new Assunto(1, "SCRUM", 1);
-		Assunto assunto2 = new Assunto(2, "KANBAN", 1);
-
-		Disciplina d1 = new Disciplina(1, "ENGS", "Engenharia de Software");
-		d1.setAssuntos(Arrays.asList(assunto1, assunto2));
+		// Cria e exibe a janela
+		SwingUtilities.invokeLater(new Runnable() {
+			@Override
+			public void run() {
+				DisciplinaFrame janela = new DisciplinaFrame();
+				janela.setVisible(true);
+			}
+		});
 
 	}
 
